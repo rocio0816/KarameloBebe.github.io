@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KARAMELO — Suavidad y amor desde el primer día</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Quicksand & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Nunito', 'sans-serif'],
+            display: ['Quicksand', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              pink: '#F472B6',
+              'pink-light': '#FDF2F8',
+              'pink-soft': '#FBCFE8',
+              blue: '#38BDF8',
+              'blue-light': '#F0F9FF',
+              'blue-soft': '#BAE6FD',
+              yellow: '#FEF08A',
+              cream: '#FFFDF9',
+              neutral: '#334155',
+              muted: '#64748B'
+            }
+          },
+          boxShadow: {
+            'soft': '0 8px 30px rgba(0, 0, 0, 0.04)',
+            'cloud': '0 12px 35px -5px rgba(244, 114, 182, 0.15)',
+            'cloud-blue': '0 12px 35px -5px rgba(56, 189, 248, 0.15)',
+          },
+          borderRadius: {
+            '4xl': '2rem',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="antialiased selection:bg-brand-pink-soft selection:text-brand-pink">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-pink-100 via-sky-100 to-pink-100 text-xs text-slate-700 py-2 px-4 text-center font-semibold tracking-wide border-b border-pink-100/60 flex items-center justify-center gap-2">
+    <span class="inline-block animate-pulse">☁️</span>
+    <span>¡Envío gratis en compras mayores a 200 Bs en toda Bolivia! 100% Algodón Pima Peruano hipoalergénico.</span>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZE3CXBaMlErCIUQq1XCNH3kXxqZ80z9-B8lgQWYtLvqsPDZVfGLfx_6QuM-IcN0YF0I64s0q8ZMBkrxXzBlxB9l2C6S_vNpAQ2Wd55PcWOvofy9BtQj9bpsvA1RgTj0YDGvt3vKtqFkC798ldtWWkHva8JyTPOYyDbD6Md-5ImIb9UeIPZdINp_awZMUH0AGEH4bYmfBW3_Nw8FhlgN_nhnB0I2bksUOr9sbUXsMTCdmSqt9MBc7Mew" alt="KARAMELO Baby" class="h-12 w-auto object-contain rounded-2xl group-hover:scale-105 transition-transform duration-300">
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-2xl tracking-tight text-slate-800 flex items-center">
+              KARAMELO
+              <span class="w-2 h-2 rounded-full bg-brand-pink ml-1"></span>
+            </span>
+            <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase -mt-1">Suavidad & Bebé</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7">
+          <a href="#inicio" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors">Inicio</a>
+          <a href="#tienda" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors">Tienda</a>
+          <button onclick="filterByGenderNav('niña')" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-pink-400"></span> Niña
+          </button>
+          <button onclick="filterByGenderNav('niño')" class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition-colors flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span> Niño
+          </button>
+          <a href="#guia-tallas" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors">Tallas</a>
+          <a href="#consejos" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors">Consejos Mamás</a>
+          <a href="#nosotros" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors">Sobre Nosotros</a>
+          <a href="#contacto" class="text-sm font-semibold text-slate-600 hover:text-brand-pink transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Header Actions (Cart, Account, Mobile toggle) -->
+        <div class="flex items-center gap-3">
+          <!-- Account / Club button -->
+          <a href="#club-karamelo" class="hidden sm:flex items-center gap-2 py-2 px-4 rounded-full bg-brand-pink-light text-brand-pink hover:bg-pink-100 text-xs font-bold transition duration-200 border border-pink-200/50">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Club Karamelo</span>
+          </a>
+
+          <!-- Cart Icon Button -->
+          <button id="cartBtn" onclick="toggleCartModal(true)" class="relative p-2.5 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-700 transition border border-slate-200/60 flex items-center justify-center group" aria-label="Ver Carrito de Compras">
+            <i data-lucide="shopping-bag" class="w-5 h-5 group-hover:scale-110 transition-transform text-slate-700"></i>
+            <span id="cartBadgeCount" class="absolute -top-1 -right-1 bg-brand-pink text-white text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-slate-50 text-slate-700 hover:bg-slate-100 transition" aria-label="Menú">
+            <i data-lucide="menu" id="menuIconOpen" class="w-6 h-6"></i>
+            <i data-lucide="x" id="menuIconClose" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white/95 border-b border-slate-100 px-6 py-5 shadow-xl transition-all duration-300">
+      <div class="flex flex-col space-y-3 font-semibold text-slate-600">
+        <a href="#inicio" onclick="toggleMobileMenu()" class="py-2 px-3 rounded-xl hover:bg-slate-50">Inicio</a>
+        <a href="#tienda" onclick="toggleMobileMenu()" class="py-2 px-3 rounded-xl hover:bg-slate-50">Tienda</a>
+        <div class="grid grid-cols-2 gap-2 py-1">
+          <button onclick="filterByGenderNav('niña'); toggleMobileMenu();" class="py-2 px-4 rounded-xl bg-pink-50 text-pink-700 text-sm font-bold flex items-center justify-center gap-2">
+            🌸 Colección Niña
+          </button>
+          <button onclick="filterByGenderNav('niño'); toggleMobileMenu();" class="py-2 px-4 rounded-xl bg-sky-50 text-sky-700 text-sm font-bold flex items-center justify-center gap-2">
+            🧸 Colección Niño
+          </button>
+        </div>
+        <a href="#guia-tallas" onclick="toggleMobileMenu()" class="py-2 px-3 rounded-xl hover:bg-slate-50">Guía de Tallas (RN a 2 años)</a>
+        <a href="#consejos" onclick="toggleMobileMenu()" class="py-2 px-3 rounded-xl hover:bg-slate-50">Consejos para Mamás</a>
+        <a href="#nosotros" onclick="toggleMobileMenu()" class="py-2 px-3 rounded-xl hover:bg-slate-50">Sobre Nosotros</a>
+        <a href="#contacto" onclick="toggleMobileMenu()" class="py-2 px-3 rounded-xl hover:bg-slate-50">Contacto & WhatsApp</a>
+        <a href="#club-karamelo" onclick="toggleMobileMenu()" class="py-3 px-4 rounded-2xl bg-gradient-to-r from-pink-400 to-sky-400 text-white text-center font-bold text-sm shadow-md mt-2">
+          ✨ Únete al Club Karamelo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative overflow-hidden pt-8 pb-16 lg:py-20 bg-gradient-to-b from-sky-50/70 via-pink-50/40 to-[#FFFDF9]">
+    <!-- Decorative subtle floating shapes -->
+    <div class="absolute top-12 left-10 w-48 h-48 bg-pink-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-sky-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & Copy -->
+        <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-pink-200 shadow-sm">
+            <span class="flex h-2.5 w-2.5 rounded-full bg-brand-pink"></span>
+            <span class="text-xs font-bold text-slate-700">100% Algodón Pima Peruano de Primera Calidad</span>
+          </div>
+
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-800 leading-[1.15] tracking-tight">
+            Suavidad y amor desde el <span class="bg-gradient-to-r from-pink-500 to-sky-500 bg-clip-text text-transparent">primer día</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Ropita suave de algodón Pima para acompañar los primeros momentos de tu bebé. Diseñada para proteger las pieles más delicadas con ternura, frescura y libertad de movimiento.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+            <a href="#tienda" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-brand-pink to-pink-400 hover:from-pink-600 hover:to-brand-pink text-white font-bold text-base shadow-cloud transition-all duration-300 hover:scale-[1.02]">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Ver colección</span>
+            </a>
+            <a href="#nosotros" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-700 font-bold text-base border border-slate-200 shadow-soft transition-all duration-300 hover:scale-[1.02]">
+              <span>Conoce Karamelo</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i>
+            </a>
+          </div>
+
+          <!-- Mini social proof / guarantee tags -->
+          <div class="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-medium">
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+              <span>Hipoalergénico y transpirable</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="feather" class="w-4 h-4 text-brand-pink"></i>
+              <span>Tacto extra sedoso</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-sky-500"></i>
+              <span>Envíos a toda Bolivia</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Visual Display (Featured Flatlay Image) -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative mx-auto max-w-lg lg:max-w-none">
+            <!-- Background glow frame -->
+            <div class="absolute -inset-3 bg-gradient-to-tr from-pink-300/40 to-sky-300/40 rounded-4xl blur-xl"></div>
+            
+            <div class="relative bg-white p-3 sm:p-4 rounded-4xl shadow-cloud-blue border border-white">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB36PMZAl1tSXMHYgLUCBsg9ZN36mnA4lpdDnoT6kvZOXwvQPgrZh5J2r7RJjFaooqlTY-54UH-WhGes7fJ76fleR8_Z1OCYzE6TpCQvusQjazKbza4MTo49Acr_k-sEVkp3-S975n2KdZ2I9Utwpu3RS29o1QNUxHtDL92zVly0ZG7x8Q7jNYWNkTmla6_fV1VNyrOuqSqmZfSwKnrSIKD2-ZH9ChW6uNtEmfKuaSLbkDzQlIjfB_dRg" alt="Colección de bodys, busitos y shorts de bebé Karamelo" class="w-full h-auto rounded-3xl object-cover shadow-sm">
+              
+              <!-- Floating Mini Badges -->
+              <div class="absolute -bottom-4 left-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-pink-100 flex items-center gap-3 animate-bounce hero-collection-badge">
+                <span class="w-9 h-9 rounded-full bg-pink-100 flex items-center justify-center text-brand-pink font-bold">☁️</span>
+                <div>
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Colección Exclusiva</div>
+                  <div class="text-xs font-extrabold text-slate-800">Bodys, Busos & Shorts</div>
+                </div>
+              </div>
+
+              <div class="absolute top-6 -right-3 sm:-right-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-sky-100 flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 font-bold">🍼</span>
+                <div>
+                  <div class="text-[10px] font-bold text-slate-400">Tallas</div>
+                  <div class="text-xs font-extrabold text-slate-800">RN hasta 2 Años</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3 Key Pillars under Hero -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-8 border-t border-pink-100/60">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-pink-100/50 flex items-start gap-4 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-pink-50 flex-shrink-0 flex items-center justify-center text-brand-pink">
+            <i data-lucide="cloud-rain" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-slate-800 text-lg">Algodón Pima Suave</h3>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Fibras extralargas que brindan una textura sedosa, resisten lavados y cuidan la piel sensible de alergias.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-sky-100/50 flex items-start gap-4 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-sky-50 flex-shrink-0 flex items-center justify-center text-brand-blue">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-slate-800 text-lg">De RN hasta 2 Años</h3>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Patrones anatómicos diseñados específicamente para acompañar cada mes de crecimiento y gateo.</p>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-white rounded-3xl p-6 shadow-soft border border-yellow-100/50 flex items-start gap-4 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 flex-shrink-0 flex items-center justify-center text-amber-500">
+            <i data-lucide="smile" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-slate-800 text-lg">Comodidad Diaria</h3>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Broches libres de níquel, costuras planas y cinturas elásticas amigables para cambios rápidos sin llantos.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Product Catalog Section -->
+  <section id="tienda" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-pink bg-pink-50 px-3 py-1 rounded-full border border-pink-100">Catálogo Oficial</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-800 mt-3">Nuestra primera colección</h2>
+        <p class="text-slate-500 mt-2 text-sm sm:text-base">Piezas esenciales confeccionadas con amor, suavidad inigualable y precios accesibles en bolivianos (Bs).</p>
+      </div>
+
+      <!-- Filters Bar: Gender, Type, Size, Color, Price Range -->
+      <div class="bg-slate-50/80 rounded-3xl p-5 border border-slate-100 shadow-sm mb-10">
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+          
+          <!-- Gender Quick Filter Tabs -->
+          <div class="flex items-center gap-2 bg-white p-1 rounded-2xl border border-slate-200/70 shadow-xs">
+            <button onclick="setFilter('gender', 'all')" id="btnFilterAll" class="filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-white bg-slate-800 transition">
+              Todos
+            </button>
+            <button onclick="setFilter('gender', 'niña')" id="btnFilterGirl" class="filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-pink-600 hover:bg-pink-50 transition flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-pink-400"></span> Niña
+            </button>
+            <button onclick="setFilter('gender', 'niño')" id="btnFilterBoy" class="filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-sky-400"></span> Niño
+            </button>
+          </div>
+
+          <!-- Secondary Filters: Type & Size -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 flex-1 lg:max-w-2xl">
+            
+            <!-- Type Dropdown -->
+            <select id="selectType" onchange="setFilter('type', this.value)" class="bg-white text-xs font-semibold text-slate-700 py-2.5 px-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200">
+              <option value="all">Todas las prendas</option>
+              <option value="bodys">Bodys de bebé (Manga larga / corta)</option>
+              <option value="busos">Busos de algodón</option>
+              <option value="shorts">Shorts de algodón</option>
+            </select>
+
+            <!-- Size Dropdown -->
+            <select id="selectSize" onchange="setFilter('size', this.value)" class="bg-white text-xs font-semibold text-slate-700 py-2.5 px-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200">
+              <option value="all">Todas las tallas</option>
+              <option value="RN">Recién Nacido (RN)</option>
+              <option value="3 MESES">3 Meses</option>
+              <option value="6 MESES">6 Meses</option>
+              <option value="12 MESES">12 Meses</option>
+              <option value="18 MESES">18 Meses</option>
+              <option value="24 MESES">24 Meses</option>
+            </select>
+
+            <!-- Color Palette Dropdown -->
+            <select id="selectColor" onchange="setFilter('color', this.value)" class="col-span-2 sm:col-span-1 bg-white text-xs font-semibold text-slate-700 py-2.5 px-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200">
+              <option value="all">Todos los colores</option>
+              <option value="Rosado">Rosado</option>
+              <option value="Celeste">Celeste</option>
+              <option value="Lila">Lila</option>
+              <option value="Verde">Verde</option>
+              <option value="Amarillo">Amarillo</option>
+              <option value="Anaranjado">Anaranjado</option>
+              <option value="Plomo">Plomo</option>
+              <option value="Blanco">Blanco</option>
+            </select>
+
+          </div>
+
+          <!-- Reset Filter Button -->
+          <button onclick="resetFilters()" class="text-xs font-bold text-slate-400 hover:text-slate-700 flex items-center justify-center gap-1 py-2 px-3">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+            <span>Restablecer</span>
+          </button>
+
+        </div>
+
+        <!-- Active Filter Indicator Count -->
+        <div class="mt-3 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+          <div>Mostrando <span id="productCounter" class="font-bold text-slate-800">4</span> productos disponibles de la colección</div>
+          <div class="text-[11px] text-slate-400 italic">Precios oficiales en Bolivianos (Bs)</div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <!-- Products will be dynamically populated / rendered with comprehensive data -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Size Chart & Guide (Guía de Tallas) -->
+  <section id="guia-tallas" class="py-16 bg-gradient-to-b from-[#FFFDF9] to-pink-50/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Para acertar en el regalo</span>
+        <h2 class="font-display font-extrabold text-3xl text-slate-800 mt-2">Guía de tallas Karamelo</h2>
+        <p class="text-slate-500 text-sm mt-1">Conoce las medidas recomendadas en meses y peso para cada una de nuestras prendas de algodón Pima.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-soft border border-slate-100 overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="border-b border-slate-100 text-xs font-bold uppercase text-slate-400">
+              <th class="pb-3 px-3">Talla Oficial</th>
+              <th class="pb-3 px-3">Edad recomendada</th>
+              <th class="pb-3 px-3">Estatura aprox.</th>
+              <th class="pb-3 px-3">Peso aprox.</th>
+              <th class="pb-3 px-3">Ideal para</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-600 font-medium text-xs sm:text-sm">
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-3 px-3 font-bold text-brand-pink">RN (Recién Nacido)</td>
+              <td class="py-3 px-3">0 a 1 mes</td>
+              <td class="py-3 px-3">Hasta 54 cm</td>
+              <td class="py-3 px-3">2.5 – 4.0 kg</td>
+              <td class="py-3 px-3">Primeras muditas en clínica</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-3 px-3 font-bold text-slate-800">3 MESES</td>
+              <td class="py-3 px-3">1 a 3 meses</td>
+              <td class="py-3 px-3">55 – 61 cm</td>
+              <td class="py-3 px-3">4.0 – 5.8 kg</td>
+              <td class="py-3 px-3">Bodys diarios confortables</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-3 px-3 font-bold text-slate-800">6 MESES</td>
+              <td class="py-3 px-3">3 a 6 meses</td>
+              <td class="py-3 px-3">62 – 68 cm</td>
+              <td class="py-3 px-3">5.8 – 7.8 kg</td>
+              <td class="py-3 px-3">Libre movimiento de bracitos</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-3 px-3 font-bold text-slate-800">12 MESES</td>
+              <td class="py-3 px-3">6 a 12 meses</td>
+              <td class="py-3 px-3">69 – 78 cm</td>
+              <td class="py-3 px-3">7.8 – 10.5 kg</td>
+              <td class="py-3 px-3">Gateo y exploración</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-3 px-3 font-bold text-slate-800">18 MESES</td>
+              <td class="py-3 px-3">12 a 18 meses</td>
+              <td class="py-3 px-3">79 – 85 cm</td>
+              <td class="py-3 px-3">10.5 – 12.0 kg</td>
+              <td class="py-3 px-3">Primeros pasitos firmes</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="py-3 px-3 font-bold text-brand-blue">24 MESES</td>
+              <td class="py-3 px-3">18 a 24 meses (2 años)</td>
+              <td class="py-3 px-3">86 – 92 cm</td>
+              <td class="py-3 px-3">12.0 – 14.0 kg</td>
+              <td class="py-3 px-3">Juego activo diario</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
+          <i data-lucide="info" class="w-4 h-4 text-brand-pink flex-shrink-0"></i>
+          <span>Consejo Karamelo: Si el bebé está entre dos tallas o es rellenito, te aconsejamos elegir siempre la talla superior para mayor comodidad.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Consejos para Mamás (Blog / Articles Section) -->
+  <section id="consejos" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-pink bg-pink-50 px-3 py-1 rounded-full border border-pink-100">Guía de Cuidado</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-800 mt-2">Consejitos Karamelo</h2>
+        <p class="text-slate-500 text-sm sm:text-base mt-2">Pequeños consejos para cuidar con amor a tu bebé y alargar la suavidad de su ropita.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Tip 1 -->
+        <div class="bg-[#FFFDF9] rounded-3xl p-6 border border-pink-100/70 shadow-soft hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-pink-100/80 flex items-center justify-center text-pink-500 mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="baby" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Cómo elegir la ropita para un recién nacido</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+              Prioriza prendas con aberturas amplias en el cuello y broches en la entrepierna para no forzar la cabecita. Los bodys cruzados o con hombros superpuestos son los favoritos de mamás primerizas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-pink-50 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-400">Lectura: 2 min</span>
+            <button onclick="openTipModal(1)" class="text-xs font-bold text-brand-pink hover:text-pink-700 flex items-center gap-1">
+              Leer consejo <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tip 2 -->
+        <div class="bg-[#FFFDF9] rounded-3xl p-6 border border-sky-100/70 shadow-soft hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-sky-100/80 flex items-center justify-center text-sky-500 mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="feather" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Importancia de la ropa suave y cómoda</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+              La piel del bebé es hasta 5 veces más delgada que la de un adulto. El algodón Pima no raspa ni genera picazón, permitiendo que duerman tranquilos sin irritaciones en sus pliegues.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-sky-50 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-400">Lectura: 3 min</span>
+            <button onclick="openTipModal(2)" class="text-xs font-bold text-sky-600 hover:text-sky-800 flex items-center gap-1">
+              Leer consejo <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tip 3 -->
+        <div class="bg-[#FFFDF9] rounded-3xl p-6 border border-yellow-100/70 shadow-soft hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-100/80 flex items-center justify-center text-amber-500 mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="droplets" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Cómo lavar y cuidar las prendas de algodón</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+              Lava con jabón neutro o hipoalergénico sin suavizantes químicos fuertes. Usa agua fría o tibia y seca a la sombra para mantener el color pastel radiante y la fibra elástica.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-yellow-50 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-400">Lectura: 2 min</span>
+            <button onclick="openTipModal(3)" class="text-xs font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1">
+              Leer consejo <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tip 4 -->
+        <div class="bg-[#FFFDF9] rounded-3xl p-6 border border-pink-100/70 shadow-soft hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-pink-100/80 flex items-center justify-center text-brand-pink mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="sun-medium" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Vestir al bebé según el clima</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+              La regla de oro: viste al bebé con una capita más de la que tú llevas puesta. En días cálidos, los shorts y bodys de manga corta evitan el sarpullido por calor.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-pink-50 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-400">Lectura: 3 min</span>
+            <button onclick="openTipModal(4)" class="text-xs font-bold text-brand-pink hover:text-pink-700 flex items-center gap-1">
+              Leer consejo <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tip 5 -->
+        <div class="bg-[#FFFDF9] rounded-3xl p-6 border border-sky-100/70 shadow-soft hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-sky-100/80 flex items-center justify-center text-brand-blue mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="box" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Organizar la ropita los primeros meses</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+              Organiza por tallas exactas en gavetas o cestas transparentes. Ten siempre a mano 4 muditas completas listas para emergencias de cambio nocturno.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-sky-50 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-400">Lectura: 2 min</span>
+            <button onclick="openTipModal(5)" class="text-xs font-bold text-sky-600 hover:text-sky-800 flex items-center gap-1">
+              Leer consejo <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tip 6 -->
+        <div class="bg-[#FFFDF9] rounded-3xl p-6 border border-emerald-100/70 shadow-soft hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100/80 flex items-center justify-center text-emerald-500 mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Cuidado general y apego amoroso</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+              El contacto piel con piel regula la temperatura y respiración de tu bebé. Elige ropita fácil de desabrochar para no interrumpir momentos de ternura.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-emerald-50 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-slate-400">Lectura: 3 min</span>
+            <button onclick="openTipModal(6)" class="text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-1">
+              Leer consejo <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Club Karamelo / Registration & Newsletter -->
+  <section id="club-karamelo" class="py-16 bg-gradient-to-r from-pink-100/80 via-sky-50 to-pink-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-4xl p-8 sm:p-12 shadow-cloud border border-pink-100 text-center relative overflow-hidden">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-pink-50 text-brand-pink font-bold text-xs mb-3">
+          <i data-lucide="gift" class="w-3.5 h-3.5"></i>
+          <span>Comunidad exclusiva para mamás</span>
+        </div>
+
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-800">Únete al Club Karamelo</h2>
+        <p class="text-slate-500 text-sm sm:text-base mt-2 max-w-lg mx-auto">
+          Recibe novedades, nuevos lanzamientos de algodón Pima, descuentos especiales y sorpresitas tiernas para tu bebé.
+        </p>
+
+        <!-- Form -->
+        <form id="clubForm" onsubmit="handleClubRegister(event)" class="mt-8 max-w-xl mx-auto space-y-4 text-left">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Tu Nombre completo *</label>
+              <input type="text" id="regName" required placeholder="Ej. Camila Morales" class="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico *</label>
+              <input type="email" id="regEmail" required placeholder="mama@ejemplo.com" class="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Fecha de nacimiento o edad de tu bebé (Opcional)</label>
+            <input type="text" id="regBabyAge" placeholder="Ej. Nació el 15 de marzo / o tiene 4 meses" class="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300">
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brand-pink to-pink-500 hover:from-pink-600 hover:to-brand-pink text-white font-bold text-sm shadow-md transition-transform hover:scale-[1.01] flex items-center justify-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Registrarme en el Club Karamelo</span>
+            </button>
+          </div>
+
+          <div class="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1">
+            <i data-lucide="lock" class="w-3 h-3"></i>
+            <span>Cuidamos tu privacidad. Estructura lista para sincronización con CRM/email.</span>
+          </div>
+
+        </form>
+
+        <!-- Success notification box -->
+        <div id="regSuccessAlert" class="hidden mt-6 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold text-center">
+          🎉 ¡Bienvenida al Club Karamelo! Hemos guardado tu registro. Te avisaremos cuando lleguen nuevas prendas de algodón Pima.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros (About Section) -->
+  <section id="nosotros" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Image display -->
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-pink-200 to-sky-200 rounded-4xl blur-xl opacity-60"></div>
+            <div class="relative bg-white p-3 rounded-4xl shadow-soft border border-slate-100">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIIdPlPpJm704Vvfll1XQGKqthprzKZYYgWK55nsYSSYJ1U0lrTUi2Hk5Ule3HMU89Rr21QeWeNVkzYfuybVBrK7qYZ8wzk8gec1Pf0FjIdxzKZ8DhgTjA-WChD6WUL_YV9dQuI1j0-AZVksx4r51a0Gt4v1kfa0gxk3IruV5FxTSYCA51GbGrE06xj7d2IEjMQEnlnk93ydUfw14McSu6K81I8r8BLp0Emsa1fAU9X0rszkpSWdQXxw" alt="Body manga larga Karamelo con percha de madera" class="w-full h-auto rounded-3xl object-cover">
+              
+              <div class="p-4 text-center">
+                <span class="font-display font-bold text-slate-800 text-sm">"Cada costura pensada en el bienestar de tu bebé"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text copy verbatim requirement -->
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-brand-pink text-xs font-bold">
+            <span>Nuestra Historia</span>
+          </div>
+          
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-800">
+            Conoce <span class="text-brand-pink">Karamelo</span>
+          </h2>
+
+          <div class="bg-pink-50/40 p-6 rounded-3xl border border-pink-100 text-slate-700 leading-relaxed text-sm sm:text-base space-y-4 font-normal">
+            <p>
+              "Somos Karamelo, un nuevo emprendimiento creado con mucho amor para acompañar a las mamás en los primeros momentos de sus bebés. Comenzamos con una colección de ropita de algodón Pima suave, cómoda y delicada, pensada para recién nacidos hasta los 2 años. Queremos crecer junto a nuestras familias y ofrecer prendas que transmitan suavidad, confianza y amor desde el primer día."
+            </p>
+          </div>
+
+          <!-- Commitments bullet points -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-brand-blue flex-shrink-0">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-700">Tacto sedoso hipoalergénico</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-brand-pink flex-shrink-0">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-700">Broches resistentes al óxido</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-500 flex-shrink-0">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-700">Diseñado para pañales cómodos</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 flex-shrink-0">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-700">Atención cálida y personalizada</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="py-16 sm:py-20 bg-slate-50/60 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-blue bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Estamos contigo</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-800 mt-2">Contacto y Pedidos</h2>
+        <p class="text-slate-500 text-sm mt-1">¿Tienes preguntas sobre tallas o disponibilidad? Escríbenos y una asesora mamá te responderá con gusto.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Contact Information Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Direct WhatsApp Action Card -->
+          <div class="bg-gradient-to-br from-emerald-50 to-white rounded-3xl p-6 border border-emerald-200/80 shadow-soft">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-white flex items-center justify-center">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-slate-800 text-base">Atención directa por WhatsApp</h4>
+                <p class="text-xs text-slate-500">Respuesta rápida para consultas o pedidos</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mb-4">
+              Realiza tu pedido o confirma disponibilidad de tallas y colores al instante por mensaje.
+            </p>
+            <a href="https://wa.me/?text=Hola%20Karamelo,%20quiero%20hacer%20una%20consulta%20sobre%20su%20colección%20de%20ropita%20de%20bebé." target="_blank" class="w-full py-3 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm transition">
+              <i data-lucide="phone-call" class="w-4 h-4"></i>
+              <span>Abrir chat de WhatsApp [Número editable: +591 ...]</span>
+            </a>
+          </div>
+
+          <!-- Store Info & Hours (Editable placeholders) -->
+          <div class="bg-white rounded-3xl p-6 border border-slate-200/70 shadow-soft space-y-4">
+            
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-pink-50 text-brand-pink flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-slate-700">Horario de Atención</div>
+                <div class="text-xs text-slate-500 mt-0.5">[Espacio editable: Lunes a Sábado de 09:00 a 19:00]</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-sky-50 text-brand-blue flex items-center justify-center flex-shrink-0">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-slate-700">Correo Electrónico</div>
+                <div class="text-xs text-slate-500 mt-0.5">[Espacio editable: contacto@karamelobaby.bo]</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-500 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-slate-700">Redes Sociales</div>
+                <div class="text-xs text-slate-500 mt-0.5">[Instagram / Facebook / TikTok: @karamelo.baby.bo]</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-7 bg-white rounded-4xl p-6 sm:p-8 shadow-soft border border-slate-100">
+          <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Envíanos un mensaje</h3>
+          <p class="text-xs sm:text-sm text-slate-500 mb-6">Completa el formulario y te responderemos a la brevedad posible.</p>
+
+          <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nombre y Apellido *</label>
+              <input type="text" required id="contactName" placeholder="Tu nombre" class="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-200">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico *</label>
+              <input type="email" required id="contactEmail" placeholder="tunombre@ejemplo.com" class="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-200">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Mensaje o Consulta *</label>
+              <textarea required id="contactMessage" rows="4" placeholder="¿En qué te podemos asesorar sobre nuestras prendas o tallas?" class="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-200"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Enviar consulta</span>
+            </button>
+
+            <div id="contactSuccessAlert" class="hidden p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center">
+              💌 ¡Gracias por escribirnos! Tu consulta fue enviada con éxito.
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-100 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
+        
+        <div class="flex items-center gap-3">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZE3CXBaMlErCIUQq1XCNH3kXxqZ80z9-B8lgQWYtLvqsPDZVfGLfx_6QuM-IcN0YF0I64s0q8ZMBkrxXzBlxB9l2C6S_vNpAQ2Wd55PcWOvofy9BtQj9bpsvA1RgTj0YDGvt3vKtqFkC798ldtWWkHva8JyTPOYyDbD6Md-5ImIb9UeIPZdINp_awZMUH0AGEH4bYmfBW3_Nw8FhlgN_nhnB0I2bksUOr9sbUXsMTCdmSqt9MBc7Mew" alt="KARAMELO Logo" class="h-10 w-auto rounded-xl">
+          <div>
+            <div class="font-display font-extrabold text-lg text-slate-800">KARAMELO</div>
+            <div class="text-[11px] text-slate-400">"Suavidad y amor desde el primer día"</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-500">
+          <a href="#inicio" class="hover:text-brand-pink transition">Inicio</a>
+          <a href="#tienda" class="hover:text-brand-pink transition">Tienda</a>
+          <a href="#guia-tallas" class="hover:text-brand-pink transition">Tallas</a>
+          <a href="#consejos" class="hover:text-brand-pink transition">Consejos Mamás</a>
+          <a href="#nosotros" class="hover:text-brand-pink transition">Sobre Nosotros</a>
+          <a href="#contacto" class="hover:text-brand-pink transition">Contacto</a>
+        </div>
+
+        <div class="text-xs text-slate-400 text-center md:text-right">
+          <div>Moneda oficial: <span class="font-bold text-slate-700">Bolivianos (Bs)</span></div>
+          <div>Algodón Pima Peruano Certificado</div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>© 2025 KARAMELO Baby. Todos los derechos reservados.</p>
+        <p class="flex items-center gap-1 justify-center">Hecho con ternura y cariño para todas las mamás bolivianas <span class="text-red-400">♥</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS & SLIDE-OVERS ================= -->
+
+  <!-- 1. Product Detail Modal -->
+  <div id="productDetailModal" class="fixed inset-0 z-50 hidden overflow-y-auto modal-backdrop flex items-center justify-center p-4">
+    <div class="bg-white rounded-4xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-pink-100 relative my-8 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close button -->
+      <button onclick="closeProductModal()" class="absolute top-5 right-5 p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        
+        <!-- Image display -->
+        <div class="bg-slate-50 rounded-3xl p-4 border border-slate-100">
+          <img id="modalProductImg" src="" alt="Prenda de bebé" class="w-full h-auto rounded-2xl object-cover">
+          <div class="mt-3 text-center text-xs font-bold text-slate-400 uppercase tracking-wider" id="modalProductCategory">Categoría</div>
+        </div>
+
+        <!-- Detail Information & Actions -->
+        <div class="space-y-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-pink-50 text-brand-pink" id="modalGenderBadge">Niña & Niño</span>
+              <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">En stock</span>
+            </div>
+            <h3 id="modalProductTitle" class="font-display font-extrabold text-2xl text-slate-800 mt-2">Nombre del producto</h3>
+            <div class="text-2xl font-black text-brand-pink mt-1" id="modalProductPrice">0 Bs</div>
+          </div>
+
+          <p id="modalProductDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Descripción de la prenda.
+          </p>
+
+          <div class="text-xs bg-pink-50/60 p-3 rounded-2xl border border-pink-100/80 text-slate-700">
+            <span class="font-bold text-slate-800">Material:</span> Algodón Pima 100% suave, hipoalergénico y transpirable.
+          </div>
+
+          <!-- Color selection -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Color disponible:</label>
+            <div id="modalColorOptions" class="flex flex-wrap gap-2">
+              <!-- Rendered color circles -->
+            </div>
+            <div id="modalSelectedColorName" class="text-[11px] font-semibold text-slate-500 mt-1">Seleccionado: -</div>
+          </div>
+
+          <!-- Size selection -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Talla (RN a 24 Meses):</label>
+            <div id="modalSizeOptions" class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+              <!-- Rendered size buttons -->
+            </div>
+            <div id="modalSelectedSizeName" class="text-[11px] font-semibold text-slate-500 mt-1">Seleccionado: -</div>
+          </div>
+
+          <!-- Quantity selection -->
+          <div class="flex items-center gap-4 pt-1">
+            <span class="text-xs font-bold text-slate-700">Cantidad:</span>
+            <div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
+              <button onclick="changeModalQty(-1)" class="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-slate-600 hover:bg-slate-100 font-bold">-</button>
+              <span id="modalQtyValue" class="w-10 text-center text-xs font-bold text-slate-800">1</span>
+              <button onclick="changeModalQty(1)" class="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-slate-600 hover:bg-slate-100 font-bold">+</button>
+            </div>
+          </div>
+
+          <!-- Selection warning message -->
+          <div id="modalSelectionWarning" class="text-xs text-amber-700 bg-amber-50 p-2.5 rounded-xl border border-amber-200/80 font-medium">
+            ⚠️ Selecciona la talla y el color antes de agregar al carrito.
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <button onclick="addModalProductToCart()" class="py-3 px-4 rounded-2xl bg-brand-pink hover:bg-pink-600 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+              <span>Agregar al carrito</span>
+            </button>
+            <button onclick="buyNowFromModal()" class="py-3 px-4 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Comprar ahora</span>
+            </button>
+          </div>
+
+          <!-- Washing care notes -->
+          <div class="pt-3 border-t border-slate-100 text-[11px] text-slate-400 space-y-1">
+            <div>🧼 Lavado suave a mano o ciclo delicado con agua fría.</div>
+            <div>🌿 Secar a la sombra. No usar cloro ni blanqueadores abrasivos.</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. Shopping Cart Drawer / Modal -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden modal-backdrop flex justify-end">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between overflow-hidden animate-in slide-in-from-right duration-300">
+      
+      <!-- Cart Header -->
+      <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-pink-50/30">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-pink-100 flex items-center justify-center text-brand-pink">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-slate-800">Carrito de compras</h3>
+            <div class="text-xs text-slate-400" id="cartHeaderSubtitle">0 prendas seleccionadas</div>
+          </div>
+        </div>
+        <button onclick="toggleCartModal(false)" class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Cart Item List -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-4" id="cartItemsContainer">
+        <!-- Dynamic Cart Items Rendered Here -->
+      </div>
+
+      <!-- Cart Footer: Subtotal, Total, WhatsApp checkout flow -->
+      <div class="p-5 border-t border-slate-100 bg-slate-50 space-y-3">
+        
+        <div class="space-y-1.5 text-xs text-slate-600">
+          <div class="flex justify-between">
+            <span>Subtotal:</span>
+            <span id="cartSubtotalText" class="font-bold text-slate-800">0 Bs</span>
+          </div>
+          <div class="flex justify-between text-slate-500">
+            <span>Envío estimado:</span>
+            <span id="cartShippingText" class="text-emerald-600 font-bold">Por coordinar</span>
+          </div>
+          <div class="flex justify-between text-base font-extrabold text-slate-800 pt-2 border-t border-slate-200">
+            <span>Total:</span>
+            <span id="cartTotalText" class="text-brand-pink font-black text-xl">0 Bs</span>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-500 bg-amber-50 p-2 rounded-xl border border-amber-200/60 leading-tight">
+          ℹ️ Tu pedido se coordina mediante WhatsApp y está sujeto a confirmación de disponibilidad inmediata.
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-1 gap-2 pt-1">
+          <button onclick="checkoutViaWhatsApp()" id="btnCheckout" class="w-full py-3.5 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Realizar pedido por WhatsApp</span>
+          </button>
+          <button onclick="toggleCartModal(false)" class="w-full py-2.5 px-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-600 font-bold text-xs border border-slate-200 transition text-center">
+            Continuar compra
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Consejos Reading Modal -->
+  <div id="tipModal" class="fixed inset-0 z-50 hidden overflow-y-auto modal-backdrop flex items-center justify-center p-4">
+    <div class="bg-white rounded-4xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-pink-100 relative my-8">
+      <button onclick="closeTipModal()" class="absolute top-5 right-5 p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-2xl bg-pink-100 text-brand-pink flex items-center justify-center font-bold text-lg" id="tipModalIcon">📖</span>
+        <div>
+          <span class="text-[11px] font-bold text-brand-pink uppercase tracking-wider">Consejitos Karamelo</span>
+          <h3 id="tipModalTitle" class="font-display font-extrabold text-xl sm:text-2xl text-slate-800">Título del consejo</h3>
+        </div>
+      </div>
+
+      <div id="tipModalBody" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-3 pt-2">
+        <!-- Body filled dynamically -->
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+        <span>Karamelo • Cuidado del bebé</span>
+        <button onclick="closeTipModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition">
+          Entendido, gracias
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Alert Notification -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 transition-all duration-300">
+    <span class="text-lg">✨</span>
+    <span id="toastMessage" class="text-xs sm:text-sm font-semibold">Producto agregado al carrito</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Exact official catalog data
+    const PRODUCTS = [
+      {
+        id: 'body-larga',
+        name: 'Body de manga larga',
+        category: 'bodys',
+        price: 75,
+        priceFormatted: '75 Bs',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIIdPlPpJm704Vvfll1XQGKqthprzKZYYgWK55nsYSSYJ1U0lrTUi2Hk5Ule3HMU89Rr21QeWeNVkzYfuybVBrK7qYZ8wzk8gec1Pf0FjIdxzKZ8DhgTjA-WChD6WUL_YV9dQuI1j0-AZVksx4r51a0Gt4v1kfa0gxk3IruV5FxTSYCA51GbGrE06xj7d2IEjMQEnlnk93ydUfw14McSu6K81I8r8BLp0Emsa1fAU9X0rszkpSWdQXxw',
+        shortDesc: 'Body suave con broches reforzados en la entrepierna, ideal para proteger los bracitos y mantenerlo abrigado con algodón Pima.',
+        fullDesc: 'Confeccionado en 100% algodón Pima peruano extra suave. Diseñado pensando en la máxima comodidad del bebé, con cuello elástico extensible para vestir con facilidad y broches inferiores libres de níquel para cambios rápidos de pañal sin causar rozaduras.',
+        sizes: ['RN', '3 MESES', '6 MESES', '12 MESES', '18 MESES', '24 MESES'],
+        gender: ['niña', 'niño'],
+        girlColors: [
+          { name: 'Rosado', hex: '#F9A8D4' },
+          { name: 'Lila', hex: '#E9D5FF' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Anaranjado', hex: '#FED7AA' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ],
+        boyColors: [
+          { name: 'Celeste', hex: '#BAE6FD' },
+          { name: 'Verde', hex: '#BBF7D0' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Plomo', hex: '#E2E8F0' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ]
+      },
+      {
+        id: 'body-corta',
+        name: 'Body de manga corta',
+        category: 'bodys',
+        price: 65,
+        priceFormatted: '65 Bs',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEZmEb4c_2x1QGZIh9Z1iErO3fWSqHoLh6b4SR2mwOEaI11iUsRggH73qoBTzTlnSR1lU3jQLPlQwAdJYH0UHBDSiIuCDq-qu6tKNY2DNVs8txyivD2ej1qzaEvrhHXXEo4OluuJy4K2p7nD0jVp4mrP2OGGnaGIopHRSHMdMWevzeY6jluJOK5mFXEzNBBFLFSOy0NQNpUfxw94rOpdM2KrlVatuWftb2FTmYecZBuHwwJ8h61f-ugw',
+        shortDesc: 'Prenda básica fresca y transpirable, perfecta para días cálidos o como primera capita protectora.',
+        fullDesc: 'Nuestra prenda más versátil. Hecha con el algodón Pima más sedoso para mantener fresca la piel de tu bebé durante el día o la siesta. No acumula humedad y resiste múltiples lavados conservando su suavidad original.',
+        sizes: ['RN', '3 MESES', '6 MESES', '12 MESES', '18 MESES', '24 MESES'],
+        gender: ['niña', 'niño'],
+        girlColors: [
+          { name: 'Rosado', hex: '#F9A8D4' },
+          { name: 'Lila', hex: '#E9D5FF' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Anaranjado', hex: '#FED7AA' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ],
+        boyColors: [
+          { name: 'Celeste', hex: '#BAE6FD' },
+          { name: 'Verde', hex: '#BBF7D0' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Plomo', hex: '#E2E8F0' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ]
+      },
+      {
+        id: 'busos-algodon',
+        name: 'Busos de algodón',
+        category: 'busos',
+        price: 80,
+        priceFormatted: '80 Bs',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCQsUgOs8OZdVpux2qV0NT3YXrnZAsB8WtQlyAcC9_eHjCRPGRJ77-YkVsiXMK9XgMiVzJm9OS7nS3It2jh9Bvrxn0X5WfPUzEB-ORykBQBDTJ3hZtmz-8i3CXYZXk-6S6RKQjIRsOiWpXNgA_5zkr5azUZl7No-9YgTd_UwCND1NHyw4-X6duzsRojK4iwe-J8UPnybCXaXoKqn7JjLcaCVu_utXvBXz7ewVrOwJmgUt43f70OFjHZAg',
+        shortDesc: 'Pantaloncitos joggers cómodos con pretina elástica ancha que no aprieta la pancita del bebé.',
+        fullDesc: 'Pantalones tipo jogger confeccionados en algodón Pima de máxima suavidad. Cuentan con puños anatómicos en los tobillos para que no se suban durante el gateo y una pretina elástica delicada que no marca el estómago.',
+        sizes: ['RN', '3 MESES', '6 MESES', '12 MESES', '18 MESES', '24 MESES'],
+        gender: ['niña', 'niño'],
+        girlColors: [
+          { name: 'Rosado', hex: '#F9A8D4' },
+          { name: 'Lila', hex: '#E9D5FF' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Anaranjado', hex: '#FED7AA' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ],
+        boyColors: [
+          { name: 'Celeste', hex: '#BAE6FD' },
+          { name: 'Verde', hex: '#BBF7D0' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Plomo', hex: '#E2E8F0' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ]
+      },
+      {
+        id: 'shorts-algodon',
+        name: 'Shorts de algodón',
+        category: 'shorts',
+        price: 60,
+        priceFormatted: '60 Bs',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADJj8kQ-RP7Mz4mxBB6m0LCUh-0TsLvi0o8C2WvktSMtX7Mw4sRYQcVyIX_OnaPOzTy12NeT43zUbF8pqDHM0_leZXNKgzZ3TpyYCLwU0iSMEYEERNvvVOcZmxexcPHA1Wnhqsb6K6-gTmAHkYOSaNhJnvuOoPfDLED8Ic0fx3vtEvbsphu0CMfsOOk7MsO_L9y0FEPIbWN7N9hP7aOIP-BPuZLLmhCoaacpvdfHxdYwmbUQp0F1LQvA',
+        shortDesc: 'Shorts frescos, ligeros y holgados para juego activo y días soleados sin rozaduras.',
+        fullDesc: 'Shorts de corte anatómico holgado diseñados para acomodar perfectamente el pañal sin ajustar los muslitos. Confeccionados en 100% algodón Pima ligero para máxima frescura en paseos y siestas.',
+        sizes: ['RN', '3 MESES', '6 MESES', '12 MESES', '18 MESES', '24 MESES'],
+        gender: ['niña', 'niño'],
+        girlColors: [
+          { name: 'Rosado', hex: '#F9A8D4' },
+          { name: 'Lila', hex: '#E9D5FF' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Anaranjado', hex: '#FED7AA' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ],
+        boyColors: [
+          { name: 'Celeste', hex: '#BAE6FD' },
+          { name: 'Verde', hex: '#BBF7D0' },
+          { name: 'Amarillo', hex: '#FEF08A' },
+          { name: 'Plomo', hex: '#E2E8F0' },
+          { name: 'Blanco', hex: '#FFFFFF' }
+        ]
+      }
+    ];
+
+    // Consejitos Articles content
+    const TIPS = {
+      1: {
+        title: "Cómo elegir la ropita adecuada para un recién nacido",
+        icon: "👶",
+        body: `
+          <p>Durante las primeras semanas, la prioridad absoluta es la suavidad y la practicidad para los cambios frecuentes. Aquí tienes tres recomendaciones esenciales:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Prefiere telas 100% naturales:</strong> El algodón Pima peruano evita rozaduras y alergias ya que sus fibras son largas y no contienen fibras sintéticas que hagan sudar al bebé.</li>
+            <li><strong>Cuellos tipo sobre (envelope):</strong> Te permiten deslizar el body hacia abajo por las caderas en caso de desbordes de pañal, sin tener que pasarlo por la carita del bebé.</li>
+            <li><strong>Evita adornos rígidos:</strong> Botones duros en la espalda, cintas largas o lentejuelas pueden lastimar su piel mientras duerme boca arriba.</li>
+          </ul>
+        `
+      },
+      2: {
+        title: "La importancia de utilizar ropa suave y cómoda",
+        icon: "☁️",
+        body: `
+          <p>La barrera cutánea de un bebé recién nacido es inmadura y absorbe cualquier sustancia con mayor facilidad. Por eso:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Regulación térmica:</strong> Las telas sintéticas retienen el calor y provocan eccemas o sarpullido. El algodón Pima respira de forma natural.</li>
+            <li><strong>Movilidad motriz:</strong> La ropita que no aprieta la pancita ni las articulaciones estimula el movimiento libre de piernas y brazos, clave para el gateo.</li>
+            <li><strong>Sueño ininterrumpido:</strong> Una costura plana y suave asegura que el bebé duerma plácidamente sin molestias en la espalda.</li>
+          </ul>
+        `
+      },
+      3: {
+        title: "Cómo lavar y cuidar las prendas de algodón Pima",
+        icon: "💧",
+        body: `
+          <p>Para conservar la textura aterciopelada y el color de tus prendas Karamelo a lo largo del tiempo:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Jabón neutro:</strong> Utiliza jabones con pH neutro formulados para bebés, libres de fragancias fuertes y fosfatos.</li>
+            <li><strong>No uses suavizantes comerciales:</strong> Los suavizantes cubren las fibras con una película cerosa que disminuye la transpirabilidad natural del algodón.</li>
+            <li><strong>Lavado en frío:</strong> Lava con agua fría y seca siempre a la sombra para proteger los tintes suaves y las fibras elásticas.</li>
+          </ul>
+        `
+      },
+      4: {
+        title: "Consejos para vestir al bebé según el clima",
+        icon: "🌤️",
+        body: `
+          <p>Los bebés aún no regulan su temperatura como los adultos. Ten en cuenta estas pautas sencillas:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>El método de las capas:</strong> Es mejor usar dos prendas delgadas (ej. body manga corta + busito) que una prenda excesivamente gruesa, permitiendo retirar capas si sube la temperatura.</li>
+            <li><strong>Toca su nuca o pecho:</strong> Las manitos y pies de los bebés suelen estar fríos por circulación inmadura. Para verificar su temperatura real, pon tu mano en su pechito o nuca.</li>
+            <li><strong>Días cálidos:</strong> Opta por nuestros shorts y bodys manga corta que permiten ventilar las axilitas y pliegues.</li>
+          </ul>
+        `
+      },
+      5: {
+        title: "Cómo organizar la ropita del bebé los primeros meses",
+        icon: "📦",
+        body: `
+          <p>Organizar el cambiador con anticipación te salvará minutos valiosos durante las noches:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Clasifica por meses reales, no por etiqueta:</strong> Revisa el tamaño visual, ya que cada corte puede variar ligeramente.</li>
+            <li><strong>Dobla en rollitos o vertical:</strong> Te permite ver todas las opciones de un vistazo en la gaveta sin desordenar la pila.</li>
+            <li><strong>Cajón de mudas de emergencia:</strong> Ten 3 bodys y 2 busitos limpios inmediatamente junto al cambiador con toallitas y pañales.</li>
+          </ul>
+        `
+      },
+      6: {
+        title: "Consejos generales para el cuidado amoroso del bebé",
+        icon: "💖",
+        body: `
+          <p>Recuerda que cada bebé tiene su propio ritmo y no hay mamás perfectas, solo mamás que aman profundamente:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>El contacto piel con piel:</strong> Ayuda a tranquilizar cólicos, estabiliza el ritmo cardíaco y fortalece el vínculo afectivo.</li>
+            <li><strong>Masajes post-baño:</strong> Un masajito suave en sus piernitas antes de ponerle su busito de algodón lo relajará antes de dormir.</li>
+            <li><strong>Consulta a tu pediatra:</strong> Siempre consulta a un profesional de salud infantil ante dudas médicas o cambios en la piel.</li>
+          </ul>
+        `
+      }
+    };
+
+    // State
+    let activeFilter = {
+      gender: 'all', // 'all', 'niña', 'niño'
+      type: 'all',   // 'all', 'bodys', 'busos', 'shorts'
+      size: 'all',   // 'all', 'RN', '3 MESES', ...
+      color: 'all'   // 'all', 'Rosado', ...
+    };
+
+    let cart = [];
+    let currentModalProduct = null;
+    let currentSelectedColor = null;
+    let currentSelectedSize = null;
+    let currentSelectedGender = 'niña';
+    let currentModalQty = 1;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      updateCartUI();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+
+    // Render Products in Grid
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const counter = document.getElementById('productCounter');
+      
+      // Filter logic
+      const filtered = PRODUCTS.filter(p => {
+        if (activeFilter.type !== 'all' && p.category !== activeFilter.type) return false;
+        if (activeFilter.size !== 'all' && !p.sizes.includes(activeFilter.size)) return false;
+        if (activeFilter.gender !== 'all') {
+          if (!p.gender.includes(activeFilter.gender)) return false;
+        }
+        if (activeFilter.color !== 'all') {
+          const colorsToCheck = activeFilter.gender === 'niño' ? p.boyColors : p.girlColors;
+          const match = colorsToCheck.some(c => c.name.toLowerCase() === activeFilter.color.toLowerCase());
+          if (!match && activeFilter.gender === 'all') {
+            const matchAny = [...p.girlColors, ...p.boyColors].some(c => c.name.toLowerCase() === activeFilter.color.toLowerCase());
+            if (!matchAny) return false;
+          } else if (!match) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      counter.innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-slate-50 rounded-3xl border border-slate-100">
+            <span class="text-3xl">🧸</span>
+            <h4 class="font-display font-bold text-slate-700 text-lg mt-2">No se encontraron prendas con estos filtros</h4>
+            <p class="text-xs text-slate-400 mt-1">Prueba restablecer los filtros para ver toda la ropita disponible.</p>
+            <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-xl bg-brand-pink text-white text-xs font-bold shadow-sm">
+              Ver toda la colección
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(product => {
+        // Colors to showcase according to gender filter
+        const displayColors = (activeFilter.gender === 'niño') ? product.boyColors : product.girlColors;
+        
+        return `
+          <div class="bg-white rounded-3xl p-4 shadow-soft border border-slate-100 hover:shadow-cloud transition-all duration-300 flex flex-col justify-between group">
+            
+            <!-- Image Frame -->
+            <div class="relative bg-[#F8FAFC] rounded-2xl p-3 overflow-hidden cursor-pointer" onclick="openProductModal('${product.id}')">
+              <img src="${product.image}" alt="${product.name}" class="w-full aspect-square object-contain rounded-xl group-hover:scale-105 transition-transform duration-300">
+              
+              <!-- Badges -->
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[10px] font-extrabold px-2 py-0.5 rounded-full text-slate-700 shadow-xs border border-slate-100">
+                Algodón Pima
+              </span>
+
+              <span class="absolute bottom-3 right-3 bg-white/95 text-brand-pink font-black text-xs px-2.5 py-1 rounded-full shadow-md">
+                ${product.priceFormatted}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="pt-4 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[11px] text-slate-400 font-semibold mb-1">
+                  <span>Niña & Niño</span>
+                  <span>RN a 24M</span>
+                </div>
+
+                <h3 class="font-display font-bold text-base text-slate-800 group-hover:text-brand-pink transition-colors cursor-pointer" onclick="openProductModal('${product.id}')">
+                  ${product.name}
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                  ${product.shortDesc}
+                </p>
+
+                <!-- Color circles preview -->
+                <div class="mt-3 flex items-center gap-1.5">
+                  <span class="text-[10px] text-slate-400 font-medium">Colores:</span>
+                  <div class="flex items-center gap-1">
+                    ${displayColors.map(c => `
+                      <span class="w-3.5 h-3.5 rounded-full border border-slate-200 shadow-2xs" style="background-color: ${c.hex}" title="${c.name}"></span>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick action buttons -->
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100">
+                <button onclick="openProductModal('${product.id}')" class="py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-bold transition flex items-center justify-center gap-1">
+                  <span>Ver detalles</span>
+                </button>
+                <button onclick="quickAddToCart('${product.id}')" class="py-2.5 px-3 rounded-xl bg-brand-pink hover:bg-pink-600 text-white text-xs font-bold shadow-xs transition flex items-center justify-center gap-1">
+                  <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                  <span>Agregar</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Filter controls
+    function setFilter(type, value) {
+      activeFilter[type] = value;
+      
+      // Update UI buttons if gender
+      if (type === 'gender') {
+        const btnAll = document.getElementById('btnFilterAll');
+        const btnGirl = document.getElementById('btnFilterGirl');
+        const btnBoy = document.getElementById('btnFilterBoy');
+
+        [btnAll, btnGirl, btnBoy].forEach(b => {
+          b.className = "filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition";
+        });
+
+        if (value === 'all') {
+          btnAll.className = "filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-white bg-slate-800 transition";
+        } else if (value === 'niña') {
+          btnGirl.className = "filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-white bg-brand-pink shadow-sm transition";
+        } else if (value === 'niño') {
+          btnBoy.className = "filter-gender-btn px-4 py-2 rounded-xl text-xs font-bold text-white bg-brand-blue shadow-sm transition";
+        }
+      }
+
+      renderProducts();
+    }
+
+    function filterByGenderNav(gender) {
+      setFilter('gender', gender);
+      const section = document.getElementById('tienda');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function resetFilters() {
+      activeFilter = { gender: 'all', type: 'all', size: 'all', color: 'all' };
+      document.getElementById('selectType').value = 'all';
+      document.getElementById('selectSize').value = 'all';
+      document.getElementById('selectColor').value = 'all';
+      setFilter('gender', 'all');
+    }
+
+    // Product Detail Modal Logic
+    function openProductModal(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      currentModalProduct = product;
+      currentModalQty = 1;
+      currentSelectedSize = null;
+      currentSelectedColor = null;
+
+      // Populate elements
+      document.getElementById('modalProductImg').src = product.image;
+      document.getElementById('modalProductTitle').innerText = product.name;
+      document.getElementById('modalProductPrice').innerText = product.priceFormatted;
+      document.getElementById('modalProductDesc').innerText = product.fullDesc;
+      document.getElementById('modalProductCategory').innerText = product.category.toUpperCase();
+      document.getElementById('modalQtyValue').innerText = '1';
+
+      // Colors depending on active gender selection or default girl/boy toggle
+      renderModalColors(product);
+      renderModalSizes(product);
+
+      updateModalSelectionState();
+
+      document.getElementById('productDetailModal').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeProductModal() {
+      document.getElementById('productDetailModal').classList.add('hidden');
+    }
+
+    function renderModalColors(product) {
+      const container = document.getElementById('modalColorOptions');
+      // Show combined girl and boy palettes with labels
+      const allColors = [
+        ...product.girlColors.map(c => ({ ...c, collection: 'Niña' })),
+        ...product.boyColors.map(c => ({ ...c, collection: 'Niño' }))
+      ];
+
+      // Remove duplicates by name
+      const uniqueColors = [];
+      const seen = new Set();
+      allColors.forEach(c => {
+        if (!seen.has(c.name)) {
+          seen.add(c.name);
+          uniqueColors.push(c);
+        }
+      });
+
+      container.innerHTML = uniqueColors.map(color => `
+        <button onclick="selectModalColor('${color.name}', '${color.hex}')" id="colorOpt-${color.name}" class="color-opt-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 text-xs font-semibold text-slate-700 hover:border-brand-pink transition">
+          <span class="w-3.5 h-3.5 rounded-full border border-slate-300" style="background-color: ${color.hex}"></span>
+          <span>${color.name}</span>
+        </button>
+      `).join('');
+    }
+
+    function renderModalSizes(product) {
+      const container = document.getElementById('modalSizeOptions');
+      container.innerHTML = product.sizes.map(size => `
+        <button onclick="selectModalSize('${size}')" id="sizeOpt-${size.replace(/\s+/g, '-')}" class="size-opt-btn py-2 px-1 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:border-brand-pink transition text-center">
+          ${size}
+        </button>
+      `).join('');
+    }
+
+    function selectModalColor(colorName, hex) {
+      currentSelectedColor = colorName;
+      document.querySelectorAll('.color-opt-btn').forEach(btn => {
+        btn.classList.remove('ring-2', 'ring-brand-pink', 'bg-pink-50', 'border-brand-pink');
+      });
+      const selectedBtn = document.getElementById(`colorOpt-${colorName}`);
+      if (selectedBtn) {
+        selectedBtn.classList.add('ring-2', 'ring-brand-pink', 'bg-pink-50', 'border-brand-pink');
+      }
+      document.getElementById('modalSelectedColorName').innerText = `Seleccionado: ${colorName}`;
+      updateModalSelectionState();
+    }
+
+    function selectModalSize(size) {
+      currentSelectedSize = size;
+      document.querySelectorAll('.size-opt-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-pink', 'text-white', 'border-brand-pink');
+      });
+      const selectedBtn = document.getElementById(`sizeOpt-${size.replace(/\s+/g, '-')}`);
+      if (selectedBtn) {
+        selectedBtn.classList.add('bg-brand-pink', 'text-white', 'border-brand-pink');
+      }
+      document.getElementById('modalSelectedSizeName').innerText = `Seleccionado: ${size}`;
+      updateModalSelectionState();
+    }
+
+    function changeModalQty(delta) {
+      currentModalQty = Math.max(1, currentModalQty + delta);
+      document.getElementById('modalQtyValue').innerText = currentModalQty;
+    }
+
+    function updateModalSelectionState() {
+      const warning = document.getElementById('modalSelectionWarning');
+      if (!currentSelectedSize || !currentSelectedColor) {
+        warning.classList.remove('hidden');
+      } else {
+        warning.classList.add('hidden');
+      }
+    }
+
+    function quickAddToCart(productId) {
+      // Direct shortcut helper defaults to first available size & color or prompts modal
+      openProductModal(productId);
+      showToast('Selecciona la talla y color para agregar');
+    }
+
+    function addModalProductToCart() {
+      if (!currentSelectedSize || !currentSelectedColor) {
+        alert('Por favor, selecciona la talla y el color antes de agregar al carrito.');
+        return;
+      }
+
+      addItemToCart({
+        id: `${currentModalProduct.id}-${currentSelectedSize}-${currentSelectedColor}`,
+        productId: currentModalProduct.id,
+        name: currentModalProduct.name,
+        price: currentModalProduct.price,
+        size: currentSelectedSize,
+        color: currentSelectedColor,
+        image: currentModalProduct.image,
+        quantity: currentModalQty
+      });
+
+      closeProductModal();
+      toggleCartModal(true);
+      showToast(`¡${currentModalProduct.name} (${currentSelectedSize}) agregado!`);
+    }
+
+    function buyNowFromModal() {
+      if (!currentSelectedSize || !currentSelectedColor) {
+        alert('Por favor selecciona la talla y el color antes de continuar.');
+        return;
+      }
+      addModalProductToCart();
+      checkoutViaWhatsApp();
+    }
+
+    // Cart Store & Methods
+    function addItemToCart(item) {
+      const existing = cart.find(i => i.id === item.id);
+      if (existing) {
+        existing.quantity += item.quantity;
+      } else {
+        cart.push(item);
+      }
+      updateCartUI();
+    }
+
+    function updateCartQuantity(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cartBadgeCount');
+      const container = document.getElementById('cartItemsContainer');
+      const subtitle = document.getElementById('cartHeaderSubtitle');
+      const subtotalText = document.getElementById('cartSubtotalText');
+      const totalText = document.getElementById('cartTotalText');
+
+      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+      badge.innerText = totalItems;
+      subtitle.innerText = `${totalItems} ${totalItems === 1 ? 'prenda seleccionada' : 'prendas seleccionadas'}`;
+
+      subtotalText.innerText = `${totalPrice} Bs`;
+      totalText.innerText = `${totalPrice} Bs`;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-16">
+            <span class="text-4xl">🛒</span>
+            <p class="font-display font-bold text-slate-700 text-base mt-3">Tu carrito está vacío</p>
+            <p class="text-xs text-slate-400 mt-1 max-w-xs mx-auto">Agrega bodys, busitos o shorts en algodón Pima para tu bebé.</p>
+            <button onclick="toggleCartModal(false)" class="mt-4 px-5 py-2.5 rounded-full bg-brand-pink text-white text-xs font-bold shadow-sm">
+              Explorar ropita
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-2xl border border-slate-100">
+          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl object-contain bg-white p-1 border border-slate-200/50">
+          
+          <div class="flex-1 min-w-0">
+            <h4 class="font-display font-bold text-xs sm:text-sm text-slate-800 truncate">${item.name}</h4>
+            <div class="text-[11px] text-slate-500 font-medium">
+              Talla: <span class="font-bold text-slate-700">${item.size}</span> • Color: <span class="font-bold text-slate-700">${item.color}</span>
+            </div>
+            <div class="text-xs font-bold text-brand-pink mt-0.5">
+              ${item.price} Bs <span class="text-[10px] text-slate-400 font-normal">c/u</span>
+            </div>
+          </div>
+
+          <!-- Quantity controller -->
+          <div class="flex flex-col items-end gap-1">
+            <button onclick="removeCartItem('${item.id}')" class="text-slate-400 hover:text-red-500 text-xs p-1" title="Eliminar">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+            </button>
+            <div class="flex items-center border border-slate-200 rounded-lg bg-white">
+              <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-slate-600 hover:bg-slate-100">-</button>
+              <span class="w-6 text-center text-xs font-bold text-slate-800">${item.quantity}</span>
+              <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-slate-600 hover:bg-slate-100">+</button>
+            </div>
+          </div>
+
+        </div>
+      `).join('');
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function toggleCartModal(show) {
+      const drawer = document.getElementById('cartDrawer');
+      if (show) {
+        drawer.classList.remove('hidden');
+      } else {
+        drawer.classList.add('hidden');
+      }
+    }
+
+    // WhatsApp Checkout Flow
+    function checkoutViaWhatsApp() {
+      if (cart.length === 0) {
+        alert('Tu carrito está vacío. Elige una prenda primero.');
+        return;
+      }
+
+      const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      
+      let message = `¡Hola Karamelo! Quiero realizar el pedido de las siguientes prendas de algodón Pima para mi bebé:\n\n`;
+      cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} (${item.quantity}x)\n   - Talla: ${item.size}\n   - Color: ${item.color}\n   - Subtotal: ${item.price * item.quantity} Bs\n\n`;
+      });
+      message += `Total del pedido: ${totalPrice} Bs\n`;
+      message += `Por favor, confirmarme disponibilidad y coordinar el envío. ¡Muchas gracias!`;
+
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/?text=${encoded}`, '_blank');
+    }
+
+    // Consejos Modal Logic
+    function openTipModal(tipId) {
+      const tip = TIPS[tipId];
+      if (!tip) return;
+
+      document.getElementById('tipModalTitle').innerText = tip.title;
+      document.getElementById('tipModalIcon').innerText = tip.icon;
+      document.getElementById('tipModalBody').innerHTML = tip.body;
+
+      document.getElementById('tipModal').classList.remove('hidden');
+    }
+
+    function closeTipModal() {
+      document.getElementById('tipModal').classList.add('hidden');
+    }
+
+    // Club Form Submit Demo
+    function handleClubRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      
+      document.getElementById('clubForm').reset();
+      const alertBox = document.getElementById('regSuccessAlert');
+      alertBox.innerText = `🎉 ¡Bienvenida al Club Karamelo, ${name}! Te hemos enviado una confirmación simulada a ${email}.`;
+      alertBox.classList.remove('hidden');
+
+      showToast('¡Registro exitoso en Club Karamelo!');
+    }
+
+    // Contact Form Submit
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      document.getElementById('contactForm').reset();
+      const alertBox = document.getElementById('contactSuccessAlert');
+      alertBox.innerText = `💌 ¡Muchas gracias, ${name}! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.`;
+      alertBox.classList.remove('hidden');
+
+      showToast('Mensaje de consulta enviado');
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const openIcon = document.getElementById('menuIconOpen');
+      const closeIcon = document.getElementById('menuIconClose');
+
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    // Toast Utility
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
